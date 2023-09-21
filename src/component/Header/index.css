@@ -1,0 +1,13 @@
+.website-logo {
+  width: 100px;
+  cursor: pointer;
+}
+.nav-bg {
+  background-color: #272727;
+  padding: 20px;
+}
+.home-nav {
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}

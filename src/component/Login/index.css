@@ -1,0 +1,13 @@
+.login-bg {
+  background-color: black;
+  height: 100vh;
+}
+
+.logo {
+  width: 100px;
+}
+.login-sub-bg {
+  background-color: #202020;
+  width: 350px;
+  padding: 40px;
+}

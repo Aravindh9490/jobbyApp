@@ -1,0 +1,18 @@
+.bg {
+  background-color: black;
+  min-height: 100vh;
+  color: aliceblue;
+  padding: 25px;
+}
+.bg-2 {
+  background-color: #121212;
+  margin: 20px;
+  border-radius: 24px;
+  padding: 20px;
+}
+.bg-sim {
+  background-color: #121212;
+  margin: 20px;
+  border-radius: 24px;
+  padding: 20px;
+}

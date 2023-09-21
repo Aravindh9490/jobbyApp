@@ -1,0 +1,7 @@
+.home-bg {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+  background-size: cover;
+  height: 100vh;
+  padding-top: 100px;
+  padding-left: 50px;
+}

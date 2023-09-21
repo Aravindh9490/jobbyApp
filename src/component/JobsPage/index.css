@@ -1,0 +1,27 @@
+.jobs-bg {
+  background-color: black;
+  min-height: 100vh;
+  padding: 20px;
+}
+.profile-bg {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  width: 350px;
+  height: 300px;
+  border-radius: 24px;
+  background-size: cover;
+}
+.hr {
+  border: 2px solid #ffffff;
+  width: 350px;
+}
+.searchInput {
+  background-color: transparent;
+  border: 0px;
+  outline: none;
+  color: #ffffff;
+}
+.SearchAndIcon {
+  border: 1px solid #7e858e;
+  border-radius: 4px;
+  padding: 2px;
+}

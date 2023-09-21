@@ -1,0 +1,16 @@
+.imgLogo {
+  width: 50px;
+}
+.jobListBg {
+  background-color: #121212;
+  border-radius: 14px;
+}
+.marL {
+  margin-left: 10px;
+}
+.hr {
+  border: 2px solid #f1f5f9;
+}
+.underline {
+  text-decoration: none;
+}
