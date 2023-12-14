@@ -35,6 +35,14 @@ const employmentTypesList = [
   },
 ]
 
+const locations = [
+  {label: 'Hyderabad', locationId: 'HYDERABAD'},
+  {label: 'Bangalore', locationId: 'BANGALORE'},
+  {label: 'Chennai', locationId: 'CHENNAI'},
+  {label: 'Delhi', locationId: 'DELHI'},
+  {label: 'Mumbai', locationId: 'MUMBAI'},
+]
+
 const salaryRangesList = [
   {
     salaryRangeId: '1000000',
@@ -63,6 +71,7 @@ class JobsPage extends Component {
     searchInput: '',
     activeSalaryRangeId: '',
     employmentTypesChecked: [],
+    selectLocation: [],
   }
 
   componentDidMount() {
@@ -108,7 +117,8 @@ class JobsPage extends Component {
   updateSalaryRangeId = SalaryRangeId =>
     this.setState({activeSalaryRangeId: SalaryRangeId}, this.getJobsList)
 
-  updateEmploymentTypesChecked = typeId => {
+  updateTypesChecked = typeId => {
+    console.log(typeId)
     const {employmentTypesChecked} = this.state
     let updatedList = employmentTypesChecked
     if (employmentTypesChecked.includes(typeId)) {
@@ -237,6 +247,26 @@ class JobsPage extends Component {
     }
   }
 
+  LocationFilter = id => {
+    console.log(id)
+    const {jobsList, selectLocation} = this.state
+    console.log(selectLocation)
+    let updatedList = [...selectLocation]
+    if (updatedList.includes(id)) {
+      updatedList = updatedList.filter(e => e !== id)
+      this.setState({selectLocation: updatedList})
+    } else {
+      updatedList.push(id)
+      this.setState({selectLocation: updatedList})
+    }
+
+    const jobListBaseOnLocation = jobsList.filter(d =>
+      d.location.includes(selectLocation),
+    )
+
+    this.setState({jobsList: jobListBaseOnLocation})
+  }
+
   renderSideBar = () => {
     const {userData} = this.state
 
@@ -250,8 +280,25 @@ class JobsPage extends Component {
             {employmentTypesList.map(type => (
               <TypeOfEmployment
                 key={type.employmentTypeId}
-                allTypes={type}
-                updateEmploymentTypesChecked={this.updateEmploymentTypesChecked}
+                id={type.employmentTypeId}
+                label={type.label}
+                updateTypesChecked={this.updateTypesChecked}
+                type="employees"
+              />
+            ))}
+          </ul>
+        </div>
+        <hr className="hr" />
+        <div>
+          <h5 className="fw-bold text-white">Locations</h5>
+          <ul className="list-unstyled text-white">
+            {locations.map(type => (
+              <TypeOfEmployment
+                key={type.locationId}
+                id={type.locationId}
+                label={type.label}
+                updateTypesChecked={this.LocationFilter}
+                type="location"
               />
             ))}
           </ul>

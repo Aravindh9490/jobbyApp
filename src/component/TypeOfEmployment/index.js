@@ -1,9 +1,12 @@
 const TypeOfEmployment = props => {
-  const {allTypes, updateEmploymentTypesChecked} = props
-  const {employmentTypeId, label} = allTypes
+  const {id, label, updateTypesChecked, type} = props
 
   const onChangeEmpType = () => {
-    updateEmploymentTypesChecked(employmentTypeId)
+    if (type === 'employees') {
+      updateTypesChecked(id)
+    } else if (type === 'location') {
+      updateTypesChecked(label)
+    }
   }
 
   return (
@@ -12,9 +15,9 @@ const TypeOfEmployment = props => {
         onChange={onChangeEmpType}
         className="m-1"
         type="checkbox"
-        id={employmentTypeId}
+        id={id}
       />
-      <label className="m-1" htmlFor={employmentTypeId}>
+      <label className="m-1" htmlFor={id}>
         {label}
       </label>
     </li>
